@@ -1,3 +1,3 @@
 # max-gym
 
-The repository for Max Anschutz' gym sign ups and class attendance web app. 
+The repository is for Max Anschutz' gym sign ups and class attendance web app. 
