@@ -1,15 +1,19 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/max-schultz/max-gym/pkg/handlers"
-	"github.com/max-schultz/max-gym/pkg/render"
-	"github.com/max-schultz/max-gym/pkg/config"
+
+
+	"github.com/max-schultz/max-gym/internal/config"
+	"github.com/max-schultz/max-gym/internal/handlers"
+	"github.com/max-schultz/max-gym/internal/models"
+	"github.com/max-schultz/max-gym/internal/render"
 )
 
 const portNumber = ":8080"
@@ -19,6 +23,9 @@ var session *scs.SessionManager
 
 // main is the main function
 func main() {
+	// what am I going to put in the session
+	gob.Register(models.Reservation{})
+
 	// change this to true when in production
 	app.InProduction = false
 
