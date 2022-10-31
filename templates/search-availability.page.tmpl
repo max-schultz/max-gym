@@ -1,0 +1,80 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h1 class="mt-3">New Sale</h1>
+
+                <form action="/search-availability" method="post" novalidate class="needs-validation">
+                    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+                    <div class="row">
+                        <div class="col">
+                            <h5>Coach</h5>
+                            <div class="row" id="coach">
+                                
+                                <div class="col-md-6">
+                                    <input required class="form-control" type="text" name="start" placeholder="Enter coach's name">
+                                </div>
+                            </div>
+                            <br>
+                            <h5>Client Name</h5>
+                            <div class="row" id="client-name">
+                                <div class="col-md-6">
+                                    <input required class="form-control" type="text" name="end" placeholder="John Smith">
+                                </div>
+                            </div>  
+                            <br>
+                            <h5>Package</h5>
+                            <div class="row" id="package">
+                                <div class="col-md-6">
+                                    <input required class="form-control" type="text" name="end" placeholder="Choose">
+                                </div>
+                            </div>  
+                            <br>
+                            <h5>Discount Rate</h5>
+                            <div class="row" id="package">
+                                <div class="col-md-6">
+                                    <input required class="form-control" type="text" name="end" placeholder="Choose">
+                                </div>
+                            </div>  
+                            <br>
+                            <h5>Payment Type</h5>
+                            <div class="row" id="package">
+                                <div class="col-md-6">
+                                    <input required class="form-control" type="text" name="end" placeholder="Choose">
+                                </div>
+                            </div>  
+                            <br>
+                            <h5>Paid Amount</h5>
+                            <div class="row" id="package">
+                                <div class="col-md-6">
+                                    <input required class="form-control" type="text" name="end" placeholder="Choose">
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+    </div>
+{{end}}
+
+
+{{define "js"}}
+<script>
+    const elem = document.getElementById('reservation-dates');
+    const rangePicker = new DateRangePicker(elem, {
+        format: "yyyy-mm-dd",
+    });
+</script>
+{{end}}
+
